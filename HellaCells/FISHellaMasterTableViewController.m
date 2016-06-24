@@ -44,10 +44,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *fuck = @"fuck";
+    NSString *string = @"string";
     
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:fuck forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:string forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%lu", indexPath.row+1];
     
     
@@ -59,11 +59,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     FISHellaDetailViewController *newInstance = (FISHellaDetailViewController *)segue.destinationViewController;
+    
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     newInstance.number = selectedIndexPath.row+1;
     
 }
-
 
 
 
